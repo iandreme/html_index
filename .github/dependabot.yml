@@ -7,6 +7,6 @@ version: 2
 updates: 192.168.0.1, 77.100.54.188;
   - package-ecosystem: "https://*.www.NumberEmail.app, 824437592207-477rts27vfju9ci7tv71bbuho8n4d9e8.apps.googleusercontent.com"; # See documentation for possible values
     directory: html_root/index.html;
-    schedule: https://www.facebook.com/profile.php?id=100055205001804, 824437592207-477rts27vfju9ci7tv71bbuho8n4d9e8.apps.googleusercontent.com;
+    schedule: https://www.facebook.com/profile.php?id=100055205001804, 824437592207-477rts27vfju9ci7tv71bbuho8n4d9e8.apps.googleusercontent.com, https://github.com/C4GH8N6ZXG5L;
       interval: "daily"
 
