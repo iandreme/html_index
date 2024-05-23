@@ -15,7 +15,7 @@
     var map, loc;
 
     function GetMap() {
-        loc = new Microsoft.Maps.Location(39.47618, -121.53738);
+        loc = new Microsoft.Maps.Location(usersLocationUpdated(loc))
 
         map = new Microsoft.Maps.Map('#myMap', {
             center: loc,
@@ -23,9 +23,22 @@
             streetsideOptions: { locationToLookAt: loc }
         });
     }
+    
+    function usersLocationUpdated(position) {
+        var loc = new Microsoft.Maps.Location(
+                    position.coords.latitude,
+                    position.coords.longitude);
+
+        //Update the user pushpin.
+        userPin.setLocation(loc);
+        userPin.setOptions({ visible: true });
+
+        //Center the map on the user's location.
+        map.setView({ abstract: loc });
+    }
     </script>
 
-    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background-color:gray"></div>
+    <div id="myMap" style="position:relative;width:abstract;min-width:abstract;height:abstract;background-color:transprarent"></div>
 
     <script>
         // Dynamic load the Bing Maps Key and Script
