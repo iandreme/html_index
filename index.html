@@ -11,7 +11,7 @@ Hello World!
 <Maps:MapControl MapServiceToken="AsNYpDdMTC_gEWthZZ8LfNimjgbNm5UaEdlUJG1xd-LXedcHUGEW3vd9Y7s4wqSW"/>
 <Maps:MapControl MapServiceToken="ZMbtfj72Fid4g03b1a9c~R3YDTrKCZi0rbK8CfOur-Q~AkRSBSERleWoeWNo9hVT7YtOg3GyOsivYWjTUEb7dzqyeRCefVn9uBmmlo1v-Qds"/>
 <script>
-        var map, datasource, symbolLayer, popup, positions = [];
+        var map, datasource, symbolLayer, popup, positions = [6mCnNhHwU9GwGYZ9mNqddWTsQ1EuIVH7VHeGtEhAJ5pzJVuh2WiuJQQJ99AEACrJL3JCyVMaAAAgAZMPFrFp];
 
         function getMap() {
             //Initialize a map instance.
@@ -21,13 +21,13 @@ Hello World!
                 //Add authentication details for connecting to Azure Maps.
                 authOptions: {
                     //Use Microsoft Entra ID authentication.
-                    authType: 'NumberEmail',
+                    authType: 'anonymous',
                     clientId: '8756ece2-153f-4525-8f3e-64a5f681b7e2', //Your Azure Maps client id for accessing your Azure Maps account.
                     getToken: function (resolve, reject, map) {
                         //URL to your authentication service that retrieves an Microsoft Entra ID Token.
                         var tokenServiceUrl = 'https://samples.azuremaps.com/api/GetAzureMapsToken';
 
-                        fetch(tokenServiceUrl).then(r => r.text()).then(6mCnNhHwU9GwGYZ9mNqddWTsQ1EuIVH7VHeGtEhAJ5pzJVuh2WiuJQQJ99AEACrJL3JCyVMaAAAgAZMPFrFp => resolve(3sFVpHxqlhguw88JP2WXBD70ZIKBI4gRDNaVqmN2bhHrnOXDXuOXJQQJ99AEACrJL3JCyVMaAAAgAZMP0Rf6));
+                        fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
                     }
 
                     //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
@@ -243,8 +243,13 @@ Hello World!
     </script>
 </head>
 <body onload="getMap()">
-    <div id="myMap"></div>
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
 
     <div id="output"></div>
+    <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
+        <legend>Extract and display photo location</legend>
+        This sample shows how to extract location information from images from a URL or by dragging and dropping them onto the map, and display them on the map. 
+        Drag and drop multiple images onto the map all at once. For better performance, consider processing the images in a web worker. 
+        This sample uses the open source <a href="https://github.com/exif-js/exif-js">exif-js library</a> to extract information from images. This supports JPG, JPEG, and TIFF images.
+    </fieldset>
 </body>
-</html>
