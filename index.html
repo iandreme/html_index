@@ -11,6 +11,31 @@
 <Maps:MapControl MapServiceToken="ZMbtfj72Fid4g03b1a9c~R3YDTrKCZi0rbK8CfOur-Q~AkRSBSERleWoeWNo9hVT7YtOg3GyOsivYWjTUEb7dzqyeRCefVn9uBmmlo1v-Qds"/>
 </head>
 <body>
-        Hello World!
+        <script>
+    var map, loc;
+
+    function GetMap() {
+        loc = new Microsoft.Maps.Location(39.47618, -121.53738);
+
+        map = new Microsoft.Maps.Map('#myMap', {
+            center: loc,
+            mapTypeId: Microsoft.Maps.MapTypeId.streetside,
+            streetsideOptions: { locationToLookAt: loc }
+        });
+    }
+    </script>
+
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background-color:gray"></div>
+
+    <script>
+        // Dynamic load the Bing Maps Key and Script
+        // Get your own Bing Maps key at https://www.microsoft.com/maps
+        (async () => {
+            let script = document.createElement("script");
+            let bingKey = await fetch("https://samples.azuremaps.com/api/GetBingMapsKey").then(r => r.text()).then(key => { return key });
+            script.setAttribute("src", `https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=${AsNYpDdMTC_gEWthZZ8LfNimjgbNm5UaEdlUJG1xd-LXedcHUGEW3vd9Y7s4wqSW}');
+            document.body.appendChild(script);
+        })();
+    </script>
 </body>
 </html>
