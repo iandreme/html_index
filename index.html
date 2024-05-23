@@ -15,7 +15,7 @@
     var map, loc;
 
     function GetMap() {
-        loc = new Microsoft.Maps.Location(usersLocationUpdated(loc))
+        loc = new Microsoft.Maps.Location(usersLocationUpdated(loc));
 
         map = new Microsoft.Maps.Map('#myMap', {
             center: loc,
