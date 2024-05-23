@@ -34,9 +34,13 @@
         userPin.setOptions({ visible: true });
 
         //Center the map on the user's location.
-        map.setView({ abstract: loc });
+        map.setView({ center: loc });
     }
     </script>
+
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background-color:gray"></div><br/>
+    <input type="button" value="Start Continuous Tracking" onclick="startTracking()" />
+    <input type="button" value="Stop Continuous Tracking" onclick="stopTracking()"/>
 
     <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background-color:gray"></div>
 
