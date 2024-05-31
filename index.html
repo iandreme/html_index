@@ -12,7 +12,7 @@
 Matrix projectionMatrix;/>
 </head>
 <body>
-<script
+<script>
 private void CameraInit()
 {
 viewMatrix = Matrix.CreateLookAt(new Vector3(positionX, positionY, positionZ), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -59,7 +59,7 @@ pass.End();
 
 effect.End();
 base.Draw(gameTime);
-}>
+}
     var map, loc;
 
     function GetMap() {
