@@ -18,9 +18,9 @@ private void CameraInit()
 viewMatrix = Matrix.CreateLookAt(new Vector3(positionX, positionY, positionZ), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
 projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, device.Viewport.AspectRatio, 0.1f, 100.0f);
 }
-int #positionX = 30;
-int #positionY = 0;
-int #positionZ = 30;
+int positionX = 30;
+int positionY = 0;
+int positionZ = 30;
 VertexPositionColor[] lines;
 protected void SetLineVerticles()
 {
