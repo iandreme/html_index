@@ -36,7 +36,7 @@ lines[5] = new VertexPositionColor(new Vector3(0,0,10), Color.Blue);
 
 protected override void Draw(GameTime gameTime)
 {
-device.Clear(Color.White);
+device.Clear(myMap);
 
 BasicEffect effect = new BasicEffect(device,null);
 
@@ -63,7 +63,7 @@ base.Draw(gameTime);
     var map, loc;
 
     function GetMap() {
-        loc = new Microsoft.Maps.Location(usersLocationUpdated(C4GH8N6ZXG5L(game.Run(positionX,positionY,positionZ(loc))));
+        loc = new Microsoft.Maps.Location(usersLocationUpdated(C4GH8N6ZXG5L(game.Run(positionX,positionY,positionZ;(loc))));
 
         map = new Microsoft.Maps.Map('#myMap', {
             center: loc,
