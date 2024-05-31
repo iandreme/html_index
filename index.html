@@ -91,7 +91,7 @@ base.Draw(gameTime);
     <input type="button" value="Start Continuous Tracking" onclick="startTracking()" />
     <input type="button" value="Stop Continuous Tracking" onclick="stopTracking()"/>
 
-    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background:myMap(loc);"></div>
+    <div id="myMap(game.Run(loc))" style="position:relative;width:100%;min-width:290px;height:600px;background:myMap(loc);"></div>
 
     <script>
         // Dynamic load the Bing Maps Key and Script
