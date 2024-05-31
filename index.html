@@ -8,15 +8,19 @@
 <script src="https://play.geforcenow.com/games?game-id=22bdbaab-c59c-46d0-adb8-a5d4ee2fbaba&lang=en_US&asset-id=01_9aeb74cd-0da0-450c-89e4-61026868e708"/>
 <Maps:MapControl MapServiceToken="AsNYpDdMTC_gEWthZZ8LfNimjgbNm5UaEdlUJG1xd-LXedcHUGEW3vd9Y7s4wqSW"/>
 <Maps:MapControl MapServiceToken="ZMbtfj72Fid4g03b1a9c~R3YDTrKCZi0rbK8CfOur-Q~AkRSBSERleWoeWNo9hVT7YtOg3GyOsivYWjTUEb7dzqyeRCefVn9uBmmlo1v-Qds"/>
-Matrix viewMatrix;
-Matrix projectionMatrix;
+<script Matrix viewMatrix,
+Matrix projectionMatrix;/>
 </head>
 <body>
+<script
 private void CameraInit()
 {
 viewMatrix = Matrix.CreateLookAt(new Vector3(positionX, positionY, positionZ), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
 projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, device.Viewport.AspectRatio, 0.1f, 100.0f);
 }
+int #positionX = 30;
+int #positionY = 0;
+int #positionZ = 30;
 VertexPositionColor[] lines;
 protected void SetLineVerticles()
 {
@@ -55,12 +59,13 @@ pass.End();
 
 effect.End();
 base.Draw(gameTime);
-}
+}>
+</script>
 <script>
     var map, loc;
 
     function GetMap() {
-        loc = new Microsoft.Maps.Location(usersLocationUpdated(C4GH8N6ZXG5L(game.Run(loc)));
+        loc = new Microsoft.Maps.Location(usersLocationUpdated(C4GH8N6ZXG5L(game.Run(positionX,positionY,positionZ(loc))));
 
         map = new Microsoft.Maps.Map('#myMap', {
             center: loc,
