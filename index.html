@@ -8,9 +8,55 @@
 <script src="https://play.geforcenow.com/games?game-id=22bdbaab-c59c-46d0-adb8-a5d4ee2fbaba&lang=en_US&asset-id=01_9aeb74cd-0da0-450c-89e4-61026868e708"/>
 <Maps:MapControl MapServiceToken="AsNYpDdMTC_gEWthZZ8LfNimjgbNm5UaEdlUJG1xd-LXedcHUGEW3vd9Y7s4wqSW"/>
 <Maps:MapControl MapServiceToken="ZMbtfj72Fid4g03b1a9c~R3YDTrKCZi0rbK8CfOur-Q~AkRSBSERleWoeWNo9hVT7YtOg3GyOsivYWjTUEb7dzqyeRCefVn9uBmmlo1v-Qds"/>
+Matrix viewMatrix;
+Matrix projectionMatrix;
 </head>
 <body>
-        <script>
+private void CameraInit()
+{
+viewMatrix = Matrix.CreateLookAt(new Vector3(positionX, positionY, positionZ), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
+projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, device.Viewport.AspectRatio, 0.1f, 100.0f);
+}
+VertexPositionColor[] lines;
+protected void SetLineVerticles()
+{
+lines = new VertexPositionColor[6];
+
+lines[0] = new VertexPositionColor(new Vector3(-10, 0, 0), Color.Red);
+lines[1] = new VertexPositionColor(new Vector3(10,0,0), Color.Red);
+lines[2] = new VertexPositionColor(new Vector3(0, -10, 0), Color.Green);
+lines[3] = new VertexPositionColor(new Vector3(0,10,0), Color.Green);
+lines[4] = new VertexPositionColor(new Vector3(0, 0, -10), Color.Blue);
+lines[5] = new VertexPositionColor(new Vector3(0,0,10), Color.Blue);
+}
+
+protected override void Draw(GameTime gameTime)
+{
+device.Clear(Color.White);
+
+BasicEffect effect = new BasicEffect(device,null);
+
+effect.World = Matrix.Identity;
+effect.View = viewMatrix;
+effect.Projection = projectionMatrix;
+effect.VertexColorEnabled = true;
+
+effect.Begin();
+
+foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+{
+pass.Begin();
+
+device.VertexDeclaration = vertexDeclaration;
+device.DrawUserPrimitives(PrimitiveType.LineList, lines, 0, 3);
+
+pass.End();
+}
+
+effect.End();
+base.Draw(gameTime);
+}
+<script>
     var map, loc;
 
     function GetMap() {
