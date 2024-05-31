@@ -8,11 +8,11 @@
 <script src="https://play.geforcenow.com/games?game-id=22bdbaab-c59c-46d0-adb8-a5d4ee2fbaba&lang=en_US&asset-id=01_9aeb74cd-0da0-450c-89e4-61026868e708"/>
 <Maps:MapControl MapServiceToken="AsNYpDdMTC_gEWthZZ8LfNimjgbNm5UaEdlUJG1xd-LXedcHUGEW3vd9Y7s4wqSW"/>
 <Maps:MapControl MapServiceToken="ZMbtfj72Fid4g03b1a9c~R3YDTrKCZi0rbK8CfOur-Q~AkRSBSERleWoeWNo9hVT7YtOg3GyOsivYWjTUEb7dzqyeRCefVn9uBmmlo1v-Qds"/>
-<script Matrix viewMatrix,
-Matrix projectionMatrix;/>
 </head>
 <body>
 <script>
+Matrix viewMatrix;
+Matrix projectionMatrix;
 private void CameraInit()
 {
 viewMatrix = Matrix.CreateLookAt(new Vector3(positionX, positionY, positionZ), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
