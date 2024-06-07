@@ -5,8 +5,7 @@
   
   },
   "entryFulfillment": {
-    "webhook": "prebuilt_components_authentication:send_otp",
-    "tag": "sendOTP"
+  
   },
   "transitionRoutes": [ {
     "condition": "true",

@@ -5,8 +5,6 @@
   
   },
   "entryFulfillment": {
-    "webhook": "prebuilt_components_authentication:telephony_verification",
-    "tag": "getAccount",
     "setParameterActions": [ {
       "parameter": "phone_number",
       "value": "$session.params.telephone_number_collection_telephone_number"

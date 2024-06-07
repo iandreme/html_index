@@ -5,8 +5,7 @@
   
   },
   "entryFulfillment": {
-    "webhook": "prebuilt_components_account_balance:validate_account",
-    "tag": "getAccountBalance"
+  
   },
   "transitionRoutes": [ {
     "condition": "$flow.account_found = true",

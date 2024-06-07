@@ -85,7 +85,7 @@
       }, {
         "languageCode": "en",
         "knowledgeInfoCard": {
-        
+          "maximumSnippets": 1
         }
       } ]
     },
