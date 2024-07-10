@@ -1,26 +1,36 @@
-Hello World!
-<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-<df-messenger
-  oauth-client-id="824437592207-477rts27vfju9ci7tv71bbuho8n4d9e8.apps.googleusercontent.com"
-  project-id="numberemail-b7602"
-  agent-id="22660a4f-5461-4919-8e72-553e1d85fa74"
-  language-code="en"
-  max-query-length="-1">
-  <df-messenger-chat-bubble
-   chat-title="">
-  </df-messenger-chat-bubble>
-</df-messenger>
-<style>
-  df-messenger {
-    z-index: 999;
-    position: fixed;
-    --df-messenger-font-color: #000;
-    --df-messenger-font-family: Google Sans;
-    --df-messenger-chat-background: #f3f6fc;
-    --df-messenger-message-user-background: #d3e3fd;
-    --df-messenger-message-bot-background: #fff;
-    bottom: 16px;
-    right: 16px;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Page</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hello World!</h1>
+    <df-messenger
+      oauth-client-id="824437592207-477rts27vfju9ci7tv71bbuho8n4d9e8.apps.googleusercontent.com"
+      project-id="numberemail-b7602"
+      agent-id="22660a4f-5461-4919-8e72-553e1d85fa74"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble chat-title=""></df-messenger-chat-bubble>
+    </df-messenger>
+  </main>
+</body>
+</html>
